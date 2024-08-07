@@ -1,6 +1,6 @@
 {% set name = "pyjuliacall" %}
 {% set pypi_name = "juliacall" %}
-{% set version = "0.9.21" %}
+{% set version = "0.9.22" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/juliacall-{{ version }}.tar.gz
-  sha256: 27d8bbef56dd0c27072cb3c4843a74a019946460fe80bdc6fbf7d8760407d215
+  sha256: d2d2a6a8c80c050034227ed91b9a1383649fb2ad21ad5003b9128c0a5b8ff45d
 
 build:
   noarch: python
