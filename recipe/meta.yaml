@@ -1,6 +1,7 @@
 {% set name = "pyjuliacall" %}
 {% set pypi_name = "juliacall" %}
 {% set version = "0.9.24" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -13,11 +14,11 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python {{ python_min }}.*
     - setuptools >=42
     - wheel
     - hatchling
