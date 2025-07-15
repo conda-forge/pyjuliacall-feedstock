@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/juliacall-{{ version }}.tar.gz
-  sha256: b39565200c244e8e7525107bfa0704c691e4501db485b69617fbc723559871f4
+  sha256: e8ccffd017f60d0b4db33b9f67660c8acbb6e2f37f364ebb5798babde036c985
 
 build:
   noarch: python
