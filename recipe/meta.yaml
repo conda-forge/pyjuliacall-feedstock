@@ -1,7 +1,7 @@
 {% set name = "pyjuliacall" %}
 {% set pypi_name = "juliacall" %}
 {% set version = "0.9.27" %}
-{% set python_min = "3.8" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
