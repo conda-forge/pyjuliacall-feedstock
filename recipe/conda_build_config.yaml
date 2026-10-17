@@ -1,3 +1,11 @@
+# PythonCall loads Python's shared library, which conda-forge ships separately as
+# libpython from 3.15 on. libpython only exists for 3.11+, so 3.10 gets its own build.
 python_min:
   - "3.10"
   - "3.11"
+libpython_dep:
+  - python <3.11
+  - libpython
+zip_keys:
+  - - python_min
+    - libpython_dep
