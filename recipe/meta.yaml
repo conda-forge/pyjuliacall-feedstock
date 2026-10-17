@@ -1,7 +1,6 @@
 {% set name = "pyjuliacall" %}
 {% set pypi_name = "juliacall" %}
 {% set version = "0.9.36" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +13,8 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
+  string: py{{ python_min | replace('.', '') }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
 
 requirements:
   host:
@@ -23,6 +23,13 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    # PythonCall loads Python's shared library, which conda-forge ships separately as
+    # libpython from 3.15 on. libpython only exists for 3.11+, so 3.10 gets its own build.
+    {% if python_min == "3.10" %}
+    - python <3.11
+    {% else %}
+    - libpython
+    {% endif %}
     - pyjuliapkg >=0.1.17,<0.2.dev0
 
 test:
